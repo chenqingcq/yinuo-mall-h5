@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录</title>
+    <link rel="stylesheet" href="./dist/css/mui.css">
+    <link rel="stylesheet" href="./dist/css/mui.min.css">
+    <link rel="stylesheet" href="./dist/css/login.css">
+    <link rel="stylesheet" href="./dist/css/init.css">
+</head>
+<body>
+    <header class="header">
+        <img src="img/fanhui_btn@2x.png">
+        <span>登录</span>
+       <span class="register"><a href="https://app.yinuoshangcheng.com/app/index.php?i=34&j=&c=auth&a=enroll&"  style="color: #fff;"> 注册</a></span>
+    </header>
+    <div class="icon">
+        <img src="img/logo@2x.png">
+    </div>
+    <div class="form">
+       <div class="form1">
+           <img src="img/phone_icon@2x.png">
+           <input type="number"    placeholder="请输入手机号码"   class="phone">
+           <img src="img/error.png" class="error">
+       </div>
+       <div class="form2">
+           <img src="img/lock_icon@2x.png" class="lock">
+           <input type="password" placeholder="请输入登录密码" class="password">
+           <img src="img/error.png" class="error">
+       </div>
+       <button id="submit">登录</button>
+    </div>
+    <script src="dist/js/mui.js"></script>
+    <script src="dist/js/mui.min.js"></script>
+    <script src="dist/js/jquery-1.12.3.min.js"></script>
+</body>
+<script type="text/javascript" charset="utf-8">
+    const url='https://test.yinuoshangcheng.com:8083/app/index.php?i=34&c=entry&m=welfare&do=apply&op=login';
+    //mui初始化
+    mui.init({
+        swipeBack: true //启用右滑关闭功能
+    });
+    $('.phone').focus(function(){
+        $('.phone').css('color','#2B2B2B');
+    })
+    $('.password').focus(function(){
+        $('.password').css('color','#2B2B2B');
+    })
+    $('.error').click(function(){
+        $(this).prev().val('');
+    })
+        $("#submit").click(function(){
+        	
+        	var	httt=window.location.protocol;
+
+			var	urll=httt+'//'+window.location.host;
+
+          if($('.phone').val()==''||$('.password').val()==''){
+            mui.alert('用户名或者密码不能为空', '', function() {
+                return;
+            });
+          }else{
+              var exp =/^1[3,4,5,7,8]\d{9}$/;
+              if(exp.test($('.phone').val())){
+                 $.post(urll+'/app/index.php?i=34&c=entry&m=welfare&do=apply&op=login',{'mobile':$('.phone').val(),'password':$('.password').val()}).then(function(res){
+                     res=JSON.parse(res);
+                     console.log(res.data.status);
+                     if(res.code==0){  
+                        localStorage.setItem('status',JSON.stringify(res.data.status));
+                        localStorage.setItem('uid',res.data.uid);
+                        localStorage.setItem('mobile',res.data.mobile);
+                         if(res.data.status==0){
+                              location.href="shopertype.html";
+                         }else if(res.data.status==3){
+                           $.post(urll+'/app/index.php?i=34&c=entry&m=welfare&do=apply&op=success',{'mobile':$('.phone').val()}).then(function(res1){
+                              res1=JSON.parse(res1);
+                              console.log(res1)
+                              localStorage.setItem('data',JSON.stringify(res1.data));
+                           })
+                              location.href="shopercenter.html";
+                         }else{
+                            location.href="shopercenter.html";
+                         }
+
+                       }else{
+                        mui.alert(res.msg, '', function() {
+                        return;
+                      })
+                     }
+                 })
+              }else{
+                mui.alert('手机号输入错误', '', function() {
+                    return;
+            });
+              }
+          }
+       })
+      
+    
+</script>
+</html>

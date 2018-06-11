@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>申请个人店铺</title>
+    <link rel="stylesheet" href="./dist/css/mui.css">
+    <link rel="stylesheet" href="./dist/css/mui.min.css">
+    <link rel="stylesheet" href="./dist/css/apply.css">
+    <link rel="stylesheet" href="./dist/css/init.css" >
+</head>
+<body style="background:#f4f4f4;overflow-x:hidden">
+    <header class="header">
+        <img src="img/fanhui_btn@2x.png"  onclick="window.history.back(-1);" >
+        <span>申请个人店铺</span>
+    </header>
+  <form id="trans">
+    <div class="form1">
+       <form class="mui-input-group">
+            <div class="mui-input-row" style="background:#fff !important">
+                <label>店铺类型</label>
+                <input type="text" class="mui-input-clear"  disabled id="category">
+            </div>
+            <div class="mui-input-row" style="background:#fff !important">
+                    <label>店铺名称</label>
+                    <input type="text" class="mui-input-clear" placeholder="请输入店铺名称" id="shopName">
+           </div>
+        </form>
+    </div>
+     <link rel="stylesheet" href="sds/css/style.css" />
+    <div class="form2" style="margin-top:15px">
+            <form class="mui-input-group">
+                    <div class="mui-input-row">
+                        <section class="express-area" style="font-family: PingFang-SC-Medium;font-size:17px">
+			            <a id="expressArea" href="javascript:void(0)">
+			                <dl>
+			                    <dt style="font-size:17px">店铺范围：</dt>
+			                    <dd  id="sds"  style="font-size:17px;">省 > 市 > 区/县</dd>
+			                </dl>
+			            </a>
+			        </section>
+			        <input  type="hidden"   name="province"   id="province" />
+			        <input  type="hidden"   name="city"   id="city" />
+			        <input  type="hidden"   name="area"   id="area" />
+                    </div>
+                    <div class="mui-input-row">
+                            <label>所属区域</label>
+                            <input type="text" class="mui-input-clear street" placeholder="请输入所属街道">
+                   </div>
+                   <div class="mui-input-row" style="height:100px !important">
+                   	
+                        <label>详细地址</label>
+                        <input type="text" class="mui-input-clear address" placeholder="请输入详细地址">
+                   </div>
+           </form>
+    </div>
+    <div class="form3" style="margin-top:15px">
+            <form class="mui-input-group">
+                    <div class="mui-input-row">
+                            <label>店铺电话</label>
+                            <input type="text" class="mui-input-clear mobile" maxlength="11" placeholder="请输入联系电话" id="phone">
+                   </div>
+                   <div class="mui-input-row">
+                        <section class="express-area" style="font-family: PingFang-SC-Medium;font-size:17px">
+			           
+			                <dl>
+			                    <dt style="font-size:17px;position:relative;top:10px;left:15px;">经营范围 &nbsp;&nbsp;</dt>
+			                    <dd  id="ccc"   onclick="selectt()" style="font-size:17px;"> 
+		<style type="text/css">
+            div,ul,li{margin:0;padding:0;}
+            ul{line-style:none;}
+
+            .select{position:relative;width:134px;min-width:134px;height:36px;border:1px solid #eee;cursor:pointer;}
+            .select:after{content:"";position:absolute;top:50%;right:10px;margin-top:-2px;border-top:5px solid #666;border-right:5px solid transparent;border-left:5px solid transparent;}
+            .select .select_text{padding:0 20px 0 10px;height:36px;line-height:36px;}
+            .select_ul{display:none;position:absolute;top:34px;left:-1px;width:134px;min-width:134px;border:1px solid #D4D4D4;border-bottom-right-radius:3px;border-bottom-left-radius:3px;background:#fff;}
+            .select_ul li{line-height:36px;text-indent:10px;}
+            .select_ul li:hover{color:#fff;background:#6AA7EA;}
+            .select_ul li.cur{color:#fff;background:#195DA3;}
+        </style>
+         <script type="text/javascript" src="select/js/jquery-1.7.2.js"></script>
+        <script type="text/javascript" src="select/js/jquery.select.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                $('select.select').select();
+            });
+        </script>
+			                    	<select class="select" id="inn" name="cid" data-value="0" style="position:relative;top:-30px;left:80px;  width: 100%;"><option value="23" selected="selected" >美食行业</option><option value="24">生鲜蔬果</option><option value="25">美容美发</option><option value="26">休闲娱乐</option><option value="28">酒店住宿</option><option value="33">服装行业</option><option value="34">医疗健康</option><option value="35">汽车售后</option><option value="36">教育培训</option><option value="37">家纺套件</option><option value="38">居家生活</option><option value="39">手机数码</option><option value="40">母婴用品</option><option value="41">个护化妆</option><option value="42">生活电器</option><option value="43">珠宝饰品</option><option value="44">IT行业</option><option value="45">保险服务</option><option value="46">茶行</option><option value="47">汽车销售</option><option value="48">办公用品</option><option value="49">工艺品</option><option value="50">酒烟类</option><option value="51">摄影写真</option><option value="52">房地产销售</option><option value="53">超市/店铺</option><option value="54">家装</option><option value="55">运动健身</option><option value="56">快递物流</option><option value="57">中介家政</option><option value="58">法律服务</option><option value="59">商务服务</option><option value="60">园林花卉</option><option value="61">包装印刷</option><option value="62">土特产</option><option value="63">机械设备</option><option value="64">建筑工程</option><option value="65">机油</option><option value="101">童装</option><option value="212">健康养生</option></select>
+			                    </dd>
+			                </dl>
+			         
+			            </section>
+                   </div>
+                   <div class="mui-input-row">
+                        <label>店铺让利比</label>
+                        <input type="number"   min="10" max="90" step="1"   maxlength="2" class="mui-input-clear shopsRebateType" placeholder="请输入10%以上的比例" id="percent">
+                   </div>
+                   
+           </form>
+    </div>
+    <div class="form4" style="margin-top:15px">
+            <form class="mui-input-group">
+                    <div class="mui-input-row">
+                        <label>身份证号</label>
+                        <input type="text" class="mui-input-clear" placeholder="请输入个人身份证号" id="idCard">
+                    </div>
+                    <div class="mui-input-row passport">
+                            <label>营业执照</label>
+                            <input type="text" class="mui-input-clear" placeholder="请输入统一社会信用代码">
+                    </div>
+           </form>
+    </div>
+    <div class="form5" style="margin-top:15px;background:#fff">
+        <h4>上传证件照</h4>
+       
+        <ul>
+            <form   id="form1"  action="http://www.enuo.test/app/index.php?i=34&c=entry&m=welfare&do=apply&op=upload2"  enctype="multipart/form-data" >
+                <input    id="uplo"  type="file"   name="img" value=""  style="display:none"/>
+            <li class="front">
+                <h4>身份证正面照</h4>
+                    <div class="file"><label for="uplo"><img src="img/shangchaun_icon@2x.png" id="img1"></label>
+                      <input id="iimg1" type="hidden" value="" >
+                    </div>
+            </li>
+            </form>
+            <form   id="form2"  action="http://www.enuo.test/app/index.php?i=34&c=entry&m=welfare&do=apply&op=upload2"  enctype="multipart/form-data" >
+            	<input    id="bac"  type="file"   name="img" value=""  style="display:none"/>
+            <li class="back"> 
+                <h4>身份证反面照</h4>
+                    <div class="file"><label for="bac"><img src="img/shangchaun_icon@2x.png" id="img2"></label>
+                        <input id="iimg2" type="hidden" value="" >
+                    </div>
+            </li>
+            </form>
+            <form   id="form3"  action="http://www.enuo.test/app/index.php?i=34&c=entry&m=welfare&do=apply&op=upload2"  enctype="multipart/form-data" >
+            	<input    id="manag"  type="file"   name="img" value=""  style="display:none"/>
+            <li style="position:relative;left:25%" class="managePort">
+                <h4>营业执照</h4>
+                    <div class="file"><label for="manag"><img src="img/shangchaun_icon@2x.png" id="img3"></label>
+                        <input id="iimg3" type="hidden" value="" >
+                    </div>
+            </li>
+            </form>
+            <input type="hidden"   id="idCardThumbA" />
+            <input type="hidden"   id="idCardThumbB" />
+            <input type="hidden"   id="businessLicence" />
+        </ul>
+        <p>
+            <img src="img/quanxuan_bt.png@2x.png">
+            确认即表示同意<a href="seviceprotcol.html">《一诺商城商家服务协议》、《一诺商城诚信经营承诺书》</a>
+        </p>
+    </div>
+ </form>
+    <div id="sheet1" class="mui-popover mui-popover-bottom mui-popover-action ">
+            <!-- 可选择菜单 -->
+            <ul class="mui-table-view">
+              <li class="mui-table-view-cell">
+                <label for="upload" style="font-family:PingFang-SC-Medium;color:#2B2B2B">本地上传</label>
+                <input type="file" id="upload" style="display:none">
+              </li>
+            </ul>
+            <!-- 取消菜单 -->
+            <ul class="mui-table-view">
+              <li class="mui-table-view-cell">
+                <a href="#sheet1" style="font-family:PingFang-SC-Medium;color:#2B2B2B">取消</a>
+              </li>
+            </ul>
+        </div>
+    <button style="margin-bottom:30px" class="join">立即入驻</button>
+    <script src="dist/js/mui.js"></script>
+    <script src="dist/js/mui.min.js"></script>
+    <script src="dist/js/jquery-1.12.3.min.js"></script>   
+    <script src="dist/js/ajaxfileupload.js"></script> 
+    
+   
+   
+      <div class="iphone">
+	<div class="browser">
+        <!--选择地区-->
+     
+        <!--选择地区弹层-->
+        <section id="areaLayer" class="express-area-box">
+            <header>
+                <h3>选择地区</h3>
+                <a id="backUp" class="back" href="javascript:void(0)" title="返回"></a>
+                <a id="closeArea" class="close" href="javascript:void(0)" title="关闭"></a>
+            </header>
+            <article id="areaBox">
+                <ul id="areaList" class="area-list"></ul>
+            </article>
+        </section>
+        <!--遮罩层-->
+        <div id="areaMask" class="mask"></div>
+         <!--<div id="areaMask22" class="mask" style="z-index:1"></div>
+         -->
+         <script src="sds/js/jquery.area.js"></script>
+    </div>
+    <!--<div id="areaMask33"  class="topp"></div>
+    <style>
+    	.topp{
+    		position: fixed;
+    		bottom:0px;
+    		height: 30%;
+    		width: 100%;
+    		z-index:10;
+    		background-color: red;
+    	}
+    </style>-->
+</body>
+<script>
+var item = null;
+var	httt=window.location.protocol;
+
+const urll=httt+'//'+window.location.host;
+//$('.file').click(function(){
+//    item = $(this);
+//    mui('#sheet1').popover('toggle');
+//})
+$('.join').click(function(){
+
+	
+    var exp=/^1[3,4,5,7,8]\d{9}$/;
+    var exp1=/^([1-8]{1}[1-9]{1}|90)$/; 
+    
+    if($('#shopName').val()==''){
+      	    mui.alert("店铺名称不能为空");
+             return;
+     } 
+     if($('.street').val()==''){
+     	mui.alert("所属区域不能为空");
+             return;
+     }
+      if($('.address').val()==''){
+     	mui.alert("详细地址不能为空");
+           return;
+     }
+      if(!exp.test($('#phone').val())){
+      	    mui.alert("手机号输入错误");
+             return;
+      } 
+    if($('#percent').val()<10  | $('#percent').val()>90){
+	      mui.alert("店铺让利比输入10-90整数");
+	      return;
+     }
+        
+      if($('#category').val()=='个人店'){
+            var  leve=1;
+        }else{
+        	var  leve=2;
+        }
+        if($('#category').val()=='个人店'){
+        	if($('#idCard').val()==''){
+            mui.alert("身份证证号不能为空");
+            return;
+         }
+        }
+        if($('#category').val()=='品牌店'){
+        	if($('.passport input').val()==''){
+            mui.alert("营业执照不能为空");
+            return;
+         }
+        }
+       if($('#category').val()=='个人店'){
+          if($('.front div img').attr('src')=='img/shangchaun_icon@2x.png'){
+          mui.alert("身份证正面不能为空");
+          return;
+        }
+        if($('.back div img').attr('src')=='img/shangchaun_icon@2x.png'){
+          mui.alert("身份证反面不能为空");
+          return;
+        }
+       }
+      if($('#category').val()=='品牌店'){
+          if($('.managePort div img').attr('src')=='img/shangchaun_icon@2x.png'){
+           mui.alert("营业执照照片不能为空");
+           return;
+        }
+       } 
+           if($('#category').val()=='个人店'){
+            $.post(urll+'/app/index.php?i=34&c=entry&m=welfare&do=apply&op=insert',{
+                'uid':localStorage.getItem('uid'),
+                'leve':leve,
+                'shopName':$('#shopName').val(),
+                'cid':$('#inn option:selected').val(),
+                'province':$('#province').val(),
+                'city':$('#city').val(),
+                'district':$('#area').val(),
+                'street':$('.street').val(),
+                'address':$('.address').val(),
+                'mobile':$('.mobile').val(),
+                'shopsRebateType':$('.shopsRebateType').val(),
+                'corporateIdentityCard':$('#idCard').val(),
+                'idCardThumbA':$('#idCardThumbA').val(),
+                'idCardThumbB':$('#idCardThumbB').val()          
+              }).then((res)=>{
+                res = JSON.parse(res);
+                 console.log(res);
+                if(res.code==0){
+                	location.href="shopercenter.html?ok=1";
+                }else{
+                	 mui.alert(res.msg);
+                }
+            })
+           }else{
+            $.post(urll+'/app/index.php?i=34&c=entry&m=welfare&do=apply&op=insert',{
+                'uid':localStorage.getItem('uid'),
+                'leve':leve,
+                'shopName':$('#shopName').val(),
+                'cid':$('#inn option:selected').val(),
+                'province':$('#province').val(),
+                'city':$('#city').val(),
+                'district':$('#area').val(),
+                'street':$('.street').val(),
+                'address':$('.address').val(),
+                'mobile':$('.mobile').val(),
+                'shopsRebateType':$('.shopsRebateType').val(),
+                'businessnum':$('.passport input').val(),
+                 'businessLicence':$('#businessLicence').val()
+             }).then((res)=>{
+              	  res = JSON.parse(res);
+              	  console.log(res);
+                  if(res.code==0){
+                	location.href="shopercenter.html?ok=1";
+                }else{
+                	 mui.alert(res.msg);
+                }
+           })
+         }
+})
+
+       
+//自定义获取图片路径函数
+function getObjectURL(file) {
+    var url = null ;
+    if (window.createObjectURL!=undefined) { // basic
+        url = window.createObjectURL(file) ;
+    } else if (window.URL!=undefined) { // mozilla(firefox)
+        url = window.URL.createObjectURL(file) ;
+    } else if (window.webkitURL!=undefined) { // webkit or chrome
+        url = window.webkitURL.createObjectURL(file) ;
+    }
+    return url ;
+}
+var type=location.search.substr(6);
+if(type=="brand"){
+  $('#category').val('品牌店');
+  $('#idCard').parent().css('display','none');
+  $('li.front').css('display','none');
+  $('li.back').css('display','none');
+  localStorage.setItem('category',$('#category').val());
+}else if(type=='personal'){
+  $('#category').val('个人店');
+  $('#idCard').parent().next().css('display','none');
+  $('li.back').next().css('display','none');
+  localStorage.setItem('category',$('#category').val());
+}
+
+//选择店铺类型
+$('.enter2').click(function(){
+    $.get(urll+'/app/index.php?i=34&c=entry&m=welfare&do=apply&op=type').then(function(res){
+        res =JSON.parse(res);
+        if(res.data){
+            localStorage.setItem('manageArea',JSON.stringify(res.data));
+            location.href="managerange.html"
+        }
+    })
+})
+//选择区域
+$('.enter1').click(function(){
+    $.get(urll+'/app/index.php?i=34&c=entry&m=welfare&do=apply&op=province').then(function(res){
+        res=JSON.parse(res);
+        localStorage.setItem('area',JSON.stringify(res.data));
+        location.href="myProvice.html";
+    })
+})
+var name = decodeURIComponent(location.search.substring(1,5));
+if(name=='name'){
+    var area =decodeURIComponent(location.search.substr(6));
+    $('#state').val(area);
+    var category = localStorage.getItem('category')
+    $('#category').val(category)
+}
+if( $('#category').val()=='品牌店'){
+        $('.front').hide();
+        $('.back').hide();
+        $('#idCard').parent().hide();
+}else if($('#category').val()=='个人店'){
+        $('.passport').hide();
+        $('.managePort').hide();
+}
+//对店铺类型进行赋值
+var type = localStorage.getItem('type');
+$('.type').val(type);
+
+
+$('#uplo').change(function(){
+	  var formData = new FormData($( "#form1" )[0]);  
+	  var  that  =this;
+	  //发送ajax请求
+	  $.ajax({
+	  url:urll+'/app/index.php?i=34&c=entry&m=welfare&do=apply&op=upload2',
+	  type: 'POST',    
+      data: formData,    
+      async: false,    
+      cache: false,    
+      contentType: false,    
+      processData: false,    
+		  success:function(res){
+		  	res=JSON.parse(res);
+		  	if(res.code==1){
+		  		mui.alert(res.msg);
+		  		return;
+		  	}
+		  	$("#idCardThumbA").val(res.data)
+			var img         = that.files[0];//获取图片信息
+	        var type         = img.type;//获取图片类型，判断使用
+	        var url1         = getObjectURL(that.files[0]);//使用自定义函数，获取图片本地url
+	        var fd             = new FormData();//实例化表单，提交数据使用
+	        fd.append('pic',img);//将img追加进去
+	        if(url1){
+	        	 $('#img1').attr('src',url1).show();//展示图片
+	            $('#img1').css({'width':'100%','height':'100px','position':'absolute','top':0,'left':0});//
+	        }
+			   	
+		}
+	  });
+	 
+        
+           
+			
+})
+$('#bac').change(function(){
+	  var formData = new FormData($( "#form2" )[0]);  
+	  var  that  =this;
+	  //发送ajax请求
+	  $.ajax({
+	  url:urll+'/app/index.php?i=34&c=entry&m=welfare&do=apply&op=upload2',
+	  type: 'POST',    
+      data: formData,    
+      async: false,    
+      cache: false,    
+      contentType: false,    
+      processData: false,    
+	  success:function(res){
+	  	res=JSON.parse(res);
+	  		if(res.code==1){
+		  		mui.alert(res.msg);
+		  		return;
+		  	}
+	  		$("#idCardThumbB").val(res.data)
+		   	console.log(res);
+		   	var img         = that.files[0];//获取图片信息
+	        var type         = img.type;//获取图片类型，判断使用
+	        var url1         = getObjectURL(that.files[0]);//使用自定义函数，获取图片本地url
+	        var fd             = new FormData();//实例化表单，提交数据使用
+	        fd.append('pic',img);//将img追加进去
+	        if(url1){
+	        	 $('#img2').attr('src',url1).show();//展示图片
+	            $('#img2').css({'width':'100%','height':'100px','position':'absolute','top':0,'left':0});//
+	        }
+			   	
+		}
+	  });
+	 
+				
+})
+$('#manag').change(function(){
+	  var formData = new FormData($( "#form3" )[0]);  
+	  var  that  =this;
+	  //发送ajax请求
+	  $.ajax({
+	  url:urll+'/app/index.php?i=34&c=entry&m=welfare&do=apply&op=upload2',
+	  type: 'POST',    
+      data: formData,    
+      async: false,    
+      cache: false,    
+      contentType: false,    
+      processData: false,    
+	  success:function(res){
+	  	res=JSON.parse(res);
+	  	if(res.code==1){
+		  		mui.alert(res.msg);
+		  		return;
+		  	}
+	  		$("#businessLicence").val(res.data)
+		   	console.log(res);
+		   	var img         = that.files[0];//获取图片信息
+	        var type         = img.type;//获取图片类型，判断使用
+	        var url1         = getObjectURL(that.files[0]);//使用自定义函数，获取图片本地url
+	        var fd             = new FormData();//实例化表单，提交数据使用
+	        fd.append('pic',img);//将img追加进去
+	        if(url1){
+	        	 $('#img3').attr('src',url1).show();//展示图片
+	            $('#img3').css({'width':'100%','height':'100px','position':'absolute','top':0,'left':0});//
+	        }
+			   	
+		  }
+	  });
+		
+})
+
+//function selectt(){
+//	$("#areaMask22").show();
+//	$("#areaMask33").show();
+//}
+
+
+
+
+
+</script>
+
+
+
+</html>

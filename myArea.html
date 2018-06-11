@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>我的地址</title>
+    <link rel="stylesheet" href="./dist/css/mui.css">
+    <link rel="stylesheet" href="./dist/css/mui.min.css">
+    <link rel="stylesheet" href="./dist/css/myaddress.css">
+</head>
+
+<body>
+    <header class="header">
+        <img src="img/fanhui_btn@2x.png">
+        <span class="title">我的地址</span>      
+    </header>
+    <section>
+        <ul class="mui-table-view" id="area">
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right">北京</a>
+            </li>
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right">天津</a>
+            </li>
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right">上海</a>
+            </li>
+        </ul>
+    </section>
+    <script src="./dist/js/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $('header img').on('click', function () {
+                window.history.go(-1)
+                console.log($(this))
+            })
+        })
+        var id=location.search.substr(4);
+        var	urll=window.location.host;
+       $.get(urll+'/app/index.php?i=34&c=entry&m=welfare&do=apply&op=district',{'pid':id}).then(function(res){
+             res = JSON.parse(res);
+             var html='';
+             for(var i=0;i<res.data.length;i++){
+               html+=`<li class="mui-table-view-cell">
+                <a class="mui-navigate-right" href="applyForShop.html?name=${res.data[i].name}">${res.data[i].name}</a>
+              </li>`
+            }
+             $('#area').html(html);
+       })
+    </script>
+</body>
+
+</html>

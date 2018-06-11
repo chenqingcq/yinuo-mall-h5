@@ -1,0 +1,78 @@
+@font-face {
+    font-family: 'PingFang-SC-Regular';
+    src: url('../fonts/PINGFANG REGULAR.TTF') format('truetype');
+    font-weight: Regular;
+}
+
+@font-face {
+    font-family: 'PingFang-SC-Medium';
+    src: url('../fonts/PINGFANG MEDIUM.TTF') format('truetype');
+    font-weight: Medium;
+}
+
+@font-face {
+    font-family: 'PingFang-SC-Heavy';
+    src: url('../fonts/PINGFANG HEAVY.TTF') format('truetype');
+    font-weight: Heavy;
+}
+
+@font-face {
+    font-family: 'PingFang-SC-Light';
+    src: url('../fonts/PINGFANG LIGHT.TTF') format('truetype');
+    font-weight: Light;
+}
+
+@font-face {
+    font-family: 'PingFang-SC-Bold';
+    src: url('../fonts/PINGFANG BOLD.TTF') format('truetype');
+    font-weight: Bold;
+}
+
+@font-face {
+    font-family: 'PingFang-SC-Extralight';
+    src: url('../fonts/PINGFANG EXTRALIGHT.TTF') format('truetype');
+    font-weight: Extralight;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.header {
+    height: 44px;
+    width: 100%;
+    background: #D30000;
+    color: #fff;
+    font-size: 20px;
+    line-height: 44px;
+    text-align: center;
+    font-family: PingFang-SC-Regular;
+    font-weight: Regular;
+    display: flex;
+    align-items: center;
+}
+
+.header img {
+    height: 20px;
+    width: 12px;
+    padding: 10px;
+    box-sizing: content-box;
+    position: absolute;
+    left: 10px;
+  
+}
+
+.header span {
+    width: auto;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+section {
+    font-size: 15px;
+    padding: 12px;
+    word-break: break-all;
+    color: #888C90;
+    font-family: PingFang-SC-Regular;
+}

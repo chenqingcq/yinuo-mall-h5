@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>选择店铺经营范围</title>
+    <link rel="stylesheet" href="./dist/css/mui.css">
+    <link rel="stylesheet" href="./dist/css/mui.min.css">
+    <link rel="stylesheet" href="./dist/css/managerange.css">
+</head>
+
+<body>
+    <header class="header">
+        <img src="img/fanhui_btn@2x.png">
+        <span class="title">选择店铺经营范围</span>
+        <span class="confirm">确定</span>
+    </header>
+    <section>
+        <ul class="mui-table-view" id="range">
+            <li class="mui-table-view-cell">美食
+                <div class="slect-range">
+                    <img src="./img/select@2x.png">
+                </div>
+            </li>
+            <li class="mui-table-view-cell"> 电影/演出
+                <div class="slect-range">
+                    <img src="./img/select@2x.png">
+                </div>
+            </li>
+            <li class="mui-table-view-cell">休闲娱乐
+                <div class="slect-range">
+                    <img src="./img/select@2x.png">
+                </div>
+            </li>
+            <li class="mui-table-view-cell">酒店/住宿
+                <div class="slect-range">
+                    <img src="./img/select@2x.png">
+                </div>
+            </li>
+            <li class="mui-table-view-cell">家居家装
+                <div class="slect-range">
+                    <img src="./img/select@2x.png">
+                </div>
+            </li>
+        </ul>
+    </section>
+    <script src="./dist/js/jquery.js"></script>
+    <script src="./dist/js/mui.js"></script>
+    <script>
+    	const urll=window.location.host;
+        var manageArea = JSON.parse(localStorage.getItem('manageArea'));
+        var html='';
+        var item='';
+        for(var i=0;i<manageArea.length;i++){
+            if(i==0){
+                html+=`<li class="mui-table-view-cell">${manageArea[0].title}
+                <div class="slect-range">
+                    <img src="./img/select@2x.png" class="active">
+                </div>
+            </li>`;
+             localStorage.setItem('type',manageArea[0].title);
+            }else{
+             html+=`<li class="mui-table-view-cell">${manageArea[i].title}
+                <div class="slect-range">
+                    <img src="./img/select@2x.png">
+                </div>
+             </li>`;
+            }
+        }
+        $('.mui-table-view').html(html);
+        $(function() {
+            $('#range li').on('click', function (e) {
+               if(!$(this).children('.slect-range').children('img').hasClass('active')){
+                   $(this).children('.slect-range').children('img').addClass('active');
+                   item = $(this);
+                   $(this).siblings().children('.slect-range').children('img').removeClass('active');
+               }
+            })
+        })
+       $('.confirm').click(function(){
+           if($(item)[0]){
+            localStorage.setItem('type',$(item)[0].innerText);
+           }
+           location.href="applyForShop.html"
+       })
+    </script>
+</body>
+
+</html>

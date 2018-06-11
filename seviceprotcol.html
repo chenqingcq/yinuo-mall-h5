@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>一诺商城诚信经营承诺书</title>
+    <link rel="stylesheet" href="./dist/css/mui.css">
+    <link rel="stylesheet" href="./dist/css/mui.min.css">
+    <link rel="stylesheet" href="./dist/css/seviceprotcol.css">
+</head>
+
+<body>
+    <header class="header">
+        <img src="img/fanhui_btn@2x.png"   onclick="window.history.back(-1);">
+        <span class="title">一诺商城诚信经营承诺书</span>
+    </header>
+    <section>
+        <div class="test"></div>
+    </section>
+    <script src="./dist/js/jquery.min.js"></script>
+    <script src="./dist/js/mui.js"></script>
+    <script>
+        $(function () {
+        	var	httt=window.location.protocol;
+			const urll=httt+'//'+window.location.host;
+            $.ajax({
+                type: 'POST',
+                url: urll+'/app/index.php?i=34&c=entry&m=welfare&do=apply&op=agreement',
+                success: function (res) {
+                    console.log(JSON.parse(res).data)
+                    // $('.test').html($("<p>111</p>"));
+                    $('section').html($("<div>" + JSON.parse(res).data + "</div>"));
+                    // $('section').html(JSON.parse(res).data)      
+
+                },
+                timeout:10000,
+                error() {
+                    mui.alert('网络错误', '提示', '确认', function () {}, 'div')
+                }
+            })
+            $('header img').on('click', function () {
+                window.history.go(-1)
+                console.log($(this))
+            });
+        })
+    </script>
+</body>
+
+</html>

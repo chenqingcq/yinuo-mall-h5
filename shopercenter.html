@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>商家中心</title>
+    <link rel="stylesheet" href="./dist/css/mui.css">
+    <link rel="stylesheet" href="./dist/css/mui.min.css">
+    <link rel="stylesheet" href="./dist/css/shopercenter.css">
+</head>
+
+<body>
+    <header class="header">
+        <img src="img/fanhui_btn@2x.png">
+        <span>商家中心</span>       
+    </header>
+    <section>
+        <div class="shop-info-container" id="success">
+            <div class="img-container">
+                <img src="img/info@2x.png" alt="">
+            </div>
+            <p class="success-shop">
+                <span>你已成功开通个人店铺</span>
+            </p>
+            <p>
+                <span>店铺名称 :</span>
+                <span class="shopName">xx旗舰店</span>
+            </p>
+            <p>
+                <span>店铺类型 :</span>
+                <span class="shopType">普通</span>
+            </p>
+            <p>
+                <span>有效期:</span>
+                <span class="freeDate">2018-2019</span>
+            </p>
+        </div>
+        <div class="shop-info-container " id="checking">
+            <div class="img-container">
+                <img src="img/check@2x.png" alt="">
+            </div>
+            <p class="success-shop checking-info ">
+                <span>商家信息正在审核中...</span>
+            </p>
+            <p class="checking-info  ">
+                24小时通过审核,请耐心等待。
+            </p>
+        </div>
+        <div class="shop-info-container revoke">
+            <div class="img-container">
+                <img src="img/info@2x.png" alt="">
+            </div>
+            <p class="success-shop checking-info">
+                审核失败
+            </p>
+            <p class="checking-info">
+                营业执照与身份证不符
+            </p>
+        </div>
+    </section>
+    <footer>
+        <div class="footer" style="display:none">
+            <a href="shopertype.html" style="color:#fff">重新申请</a>
+        </div>
+    </footer>
+    <script src="./dist/js/jquery.min.js"></script>
+    <script>
+    	var	httt=window.location.protocol;
+		const urll=httt+'//'+window.location.host;
+//      $(function () {
+//          var mode = window.location.search.substr(1, window.location.search.length + 1).split("=")[1];
+//          if (mode == 'checking') {
+//              $('#checking').addClass('active');
+//              $('footer').css({
+//                  display:'none'
+//              })
+//          }
+//          $('header img').on('click',function(){
+//              window.history.go(-1)
+//          })
+//      })
+        var ok=location.search.substr(4);
+        console.log(ok)
+        if(ok==1){
+        	$('#checking').show();
+        }
+        var status = localStorage.getItem('status');
+        if(status==2){
+           $('.revoke').show();
+           $('.active').hide();
+           $('.footer').show();
+           $('#success').hide();
+           $('#checking').hide();
+        }else if(status==1){
+           $('#checking').show();
+           $('.revoke').hide();
+            $('.footer').hide();
+           $('#success').hide();
+        }else if(status==3){
+           $('#success').show();
+           $('#checking').hide();
+           $('.revoke').hide();
+           $('.footer').hide();
+           var mobile=localStorage.getItem('mobile');
+           $.post(urll+'/app/index.php?i=34&c=entry&m=welfare&do=apply&op=success',{'mobile':mobile}).then(function(res1){
+              res1=JSON.parse(res1);
+              $('.shopName').html(res1.data.shopName);
+	          $('.freeDate').html(res1.data.start+'-'+res1.data.end);
+	          if(res1.data.leve==1){
+	             $('.shopType').html('个人商家')
+	          }else{
+	             $('.shopType').html('品牌商家')
+	          }
+           })
+          $('#checking').hide();
+            
+        }
+        
+        
+        
+    </script>
+</body>
+
+</html>

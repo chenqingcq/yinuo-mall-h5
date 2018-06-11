@@ -1,0 +1,86 @@
+
+.header span.register{
+    position:absolute;
+    right:10px;
+    font-size:16px;
+}
+.icon{
+    width:100px;
+    height:100px;
+    top:90px;
+    position: relative;
+    margin:0 auto;
+}
+.icon img{
+    width:93px;
+    height:93px;
+    margin-left:3px;
+}
+input:-webkit-autofill{
+	background-color:#fff !important;
+}
+.mui-input-group{
+    margin-top:168px;
+}
+.mui-input-row img{
+    width:18px;
+    height:26px;
+}
+.form{
+    width:100%;
+    height:150px;
+    position:relative;
+    top:140px;
+}
+.form1, .form2{
+  width:94%;
+  position:relative;
+  left:3%;
+  border-bottom:1px solid #ccc;
+  height:60px;
+}
+.form img{
+    width:17px;
+    height:25px;
+    position:absolute;
+    top:17px;
+}
+.form img.lock{
+    width:21px;
+    height:21px;
+    top:19px;
+}
+.form input{
+    position:absolute;
+    width:70%;
+    font-size:17px;
+    color:#AAA;
+    line-height:30px;
+    text-align:left;
+    height:30px;
+    margin-left:21px;
+    border:none;
+    top:15px;
+    vertical-align:center;
+    font-family:PingFang-SC-Regular;
+}
+.form .error{
+    width:18px;
+    height:18px;
+    position:absolute;
+    top:21px;
+    right:10px;
+}
+.form button{
+    margin-top:35px;
+    width:94%;
+    position:absolute;
+    left:3%;
+    background:#D30000;
+    height:49px;
+    border:none;
+    color:#fff;
+    font-size:20px;
+    border-radius:25px;
+    font-family:PingFang-SC-Regular;
+}

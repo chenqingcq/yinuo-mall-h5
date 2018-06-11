@@ -1,0 +1,135 @@
+@font-face {
+    font-family: 'PingFang-SC-Regular';
+    src: url('../fonts/PINGFANG REGULAR.TTF') format('truetype');
+    font-weight: Regular;
+}
+
+@font-face {
+    font-family: 'PingFang-SC-Medium';
+    src: url('../fonts/PINGFANG MEDIUM.TTF') format('truetype');
+    font-weight: Medium;
+}
+
+@font-face {
+    font-family: 'PingFang-SC-Heavy';
+    src: url('../fonts/PINGFANG HEAVY.TTF') format('truetype');
+    font-weight: Heavy;
+}
+
+@font-face {
+    font-family: 'PingFang-SC-Light';
+    src: url('../fonts/PINGFANG LIGHT.TTF') format('truetype');
+    font-weight: Light;
+}
+
+@font-face {
+    font-family: 'PingFang-SC-Bold';
+    src: url('../fonts/PINGFANG BOLD.TTF') format('truetype');
+    font-weight: Bold;
+}
+
+@font-face {
+    font-family: 'PingFang-SC-Extralight';
+    src: url('../fonts/PINGFANG EXTRALIGHT.TTF') format('truetype');
+    font-weight: Extralight;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.header {
+    height: 44px;
+    width: 100%;
+    background: #D30000;
+    color: #fff;
+    font-size: 20px;
+    line-height: 44px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    font-family: PingFang-SC-Regular;
+}
+
+.header img {
+    height: 20px;
+    width: 12px;
+    padding: 10px;
+    box-sizing: content-box;
+    position: absolute;
+    left: 10px;
+}
+
+.header span {
+    width: auto;
+    margin: 0 auto;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+section>.shop-info-container {
+    margin-top: 25px;
+    display: none;
+    /* display: flex;
+    justify-content: center;
+    flex-wrap: wrap; */
+}
+
+.shop-info-container img {
+    display: block;
+    margin: 0 auto;
+    width: 111px;
+    margin-bottom: 18px;
+}
+
+p {
+    color: #2B2B2B;
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+}
+
+.success-shop {
+    color: #666;
+    font-size: 18px;
+    font-family: PingFang-SC-Medium;
+}
+
+.checking-info {
+    color: #666;
+    font-family: PingFang-SC-Medium;
+}
+
+.active {
+    display: block !important;
+}
+
+footer {
+    width: 100vw;
+    position: absolute;
+    bottom: 30px;
+}
+
+footer>.footer {
+    width: 90%;
+    height: 49px;
+    background-color: #D30000;
+    border-radius: 45px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: PingFang-SC-Regular;
+    line-height: 49px;
+    font-size: 20px;
+    color: #fff;
+}

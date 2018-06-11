@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>选择店铺类型</title>
+    <link rel="stylesheet" href="./dist/css/mui.css">
+    <link rel="stylesheet" href="./dist/css/mui.min.css">
+    <link rel="stylesheet" href="./dist/css/shopertype.css">
+</head>
+
+<body>
+    <header class="header">
+        <img src="img/fanhui_btn@2x.png"   onclick="window.history.back(-1);" >
+        <span class="title">选择店铺类型</span>
+    </header>
+    <section>
+        <div class="shop-type-container">
+            <ul class="mui-table-view">
+                <li class="mui-table-view-cell mui-media personal">
+                    <a href="javascript:;">
+                        <img class="mui-media-object mui-pull-left" src="img/person_icon.png">
+                        <div class="mui-media-body">
+                            <p class="shop-desc">
+                                个人店-有商品的个人商家
+                            </p>
+                            <p class='mui-ellipsis'>
+                                <span class="need">入驻需提供：</span>
+                                <span class="shop-desc">个人身份证</span>
+                            </p>
+                            <img src="img/arrow_right_btn24@2x.png" alt="" class="arrow">
+                        </div>
+                    </a>
+                </li>
+                <li class="mui-table-view-cell mui-media brand">
+                    <a href="javascript:;">
+                        <img class="mui-media-object mui-pull-left" src="img/brand _icon@2x.png">
+                        <div class="mui-media-body ">
+                            <p class="shop-desc">
+                                品牌店-有营业执照的实体店铺
+                            </p>
+                            <p class="shop-desc" style="text-align: center">或拥有自己品牌的商家</p>
+                            <p class='mui-ellipsis'>
+                                <span class="need">入驻需提供：</span>
+                                <span class="shop-desc">营业执照</span>
+                            </p>
+                            <img src="img/arrow_right_btn24@2x.png" alt="" class="arrow">
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </section>
+    <script src='./dist/js/jquery.min.js'></script>
+    <script>
+        $(function () {
+            $('.shop-type-container ul li').on('click', function (e) {
+                console.log($(this).attr('class'))
+                var mode = $(this).attr('class').split(' ')[$(this).attr('class').split(' ').length - 1];
+                console.log(mode);
+                window.location.href = 'applyForShop.html?type=' + mode
+            })
+            $('header img').on('click', function () {
+                window.history.go(-1)
+                console.log($(this))
+            })
+        })
+    </script>
+</body>
+
+</html>
